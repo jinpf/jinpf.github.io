@@ -14,13 +14,10 @@ github_username:  jinpf
 permalink: /:year/:month/:day/:title/
 
 # Build settings
-markdown: kramdown
 gems: [jekyll-paginate]
 
 future: true
 
 paginate: 10
 paginate_path: "page:num"
-
-highlighter: pygments
 

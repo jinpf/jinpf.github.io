@@ -19,13 +19,17 @@ Octave是一个科学计算及数值分析的工具，和Matlab类似，不过Oc
 
 对于机器学习而言，至少 Andrew Ng 说他的课程 Octave 是够用了，并且课程算法实现采用 Octave 。在编程语言上，Andrew Ng 称，在硅谷，机器学习工程师一般都先采用 Octave 这样的软件建模，跑数据，之后觉得模型不错再用 C++、Java之类的编程语言实现。因为机器学习算法用 Octave 实现起来比 Python、R、C++、Java之类的计算机编程语言要快捷很多，俗话说磨刀不误砍柴工。因此还是有必要学习一下Octave的基本用法，平时跑个数据什么的。
 
+
+
 ---
 
 ## 基本操作
 
 ---
 
-```Octave
+*rouge 对 Octave 的代码高亮有些问题，先凑合着这看吧。。。*
+
+```matlab
 %% Change Octave prompt  
 PS1('>> ');
 %% Change working directory in windows example:
