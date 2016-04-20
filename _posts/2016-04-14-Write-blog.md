@@ -43,5 +43,7 @@ Git用于版本控制和操作记录，GitHub的[Pages](https://pages.github.com
 
 其它非官方教程（仅做参考）：
 
+* Jekyll + github + pygments搭建博客 （**其中提到mathjax呈现数学公式，仅做标记，有空和强烈需求时再学，目前先用图片。。。**）[http://www.jianshu.com/p/609e1197754c](http://www.jianshu.com/p/609e1197754c)
 * Jekyll+多说，建立属于你的轻博客 [http://www.ituring.com.cn/article/114888](http://www.ituring.com.cn/article/114888)
 * Jekyll 搭建静态博客 [http://gaohaoyang.github.io/2015/02/15/create-my-blog-with-jekyll/](http://gaohaoyang.github.io/2015/02/15/create-my-blog-with-jekyll/) *（我就是修改的他的主题。。。）*
+* 关于代码高亮：[http://blog.csdn.net/qiujuer/article/details/50419279](http://blog.csdn.net/qiujuer/article/details/50419279)  [http://platinhom.github.io/2016/02/04/update-github-rouge/](http://platinhom.github.io/2016/02/04/update-github-rouge/)
