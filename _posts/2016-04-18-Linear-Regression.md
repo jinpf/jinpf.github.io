@@ -76,6 +76,23 @@ excerpt: 线性回归 Linear Regression 最小二乘法 Least squares 梯度下�
 
 其中![Y]({{"/pic/2016-4-18-9.png"}})为真实值的列向量。
 
+Octave代码实现：
+
+```matlab
+function J = costFunctionJ(X, y, theta)
+
+% X 为前文设置的训练集特征值矩阵
+% y 为训练集结果列向量
+% theta 为参数列向量
+
+m = size(X,1);                 % 训练集数量
+predictions = X*theta;         % 预测结果列向量
+squares = (predictions-y).^2;  % 平方差
+
+J = 1/(2*m) * sum(sqrErrors);  % 代价函数取值
+
+```
+
 ---
 
 ## 问题求解
