@@ -44,7 +44,25 @@ excerpt: 线性回归 Linear Regression 最小二乘法 Least squares 梯度下�
 
 **由于现代计算机多数编程语言均有函数库对矩阵运算进行了相关优化，如利用多核CPU并行加速等，所以大多数运算应尽量采用矩阵的方式，而不是采用一般的多重循环来实现**
 
-将训练集中的特征值组成一个矩阵，![theta]({{"/pic/2016-4-18-3.png"}})为列向量，如下：
+Octave代码实现：
+
+```matlab
+% x 为特征值列向量
+% theta 为假设变量列向量
+
+% 非矩阵形式
+function prediction = hypothesis(x, theta)
+prediction = 0.0;
+for j = 1:n+1,
+prediction += theta(j) * x(j)
+
+% 矩阵形式
+function prediction = hypothesis(x, theta)
+prediction = theta' * x
+```
+
+
+对于一组有 m 条记录的训练集，可以将训练集中的特征值组成一个矩阵，![theta]({{"/pic/2016-4-18-3.png"}})为列向量。如 m = 3，n = 2的：
 
 ![feature Matrix]({{"/pic/2016-4-18-4.png"}})
 
@@ -55,6 +73,7 @@ excerpt: 线性回归 Linear Regression 最小二乘法 Least squares 梯度下�
 ![hypothesis function3]({{"/pic/2016-4-18-6.png"}})
 
 其中若训练集中有 n 个特征，有 m 条实例，则矩阵 X 为 m x (n+1) 维矩阵。
+
 
 ---
 
@@ -93,6 +112,22 @@ J = 1/(2*m) * sum(sqrErrors);  % 代价函数取值
 
 ```
 
+或
+
+```matlab
+function J = costFunctionJ(X, y, theta)
+
+% X 为前文设置的训练集特征值矩阵
+% y 为训练集结果列向量
+% theta 为参数列向量
+
+m = size(X,1);         % 训练集数量
+e = (X*theta-y)        % 插值列向量
+
+J = 1/(2*m) * e' * e;  % 代价函数取值
+
+```
+
 ---
 
 ## 问题求解
@@ -119,6 +154,14 @@ J = 1/(2*m) * sum(sqrErrors);  % 代价函数取值
 其中 X 如前文所述，若训练集中有 n 个特征，有 m 条实例，则矩阵 X 为 m x (n+1) 维矩阵，而 y 为 m 维列向量，因此最终的![theta]({{"/pic/2016-4-18-3.png"}})为 n+1 维列向量，符合前文所述。
 
 其中运行最耗费时间的是矩阵的逆运算，时间复杂度为 O(n^3)，因此如果特征数量（不是训练集实例个数）非常庞大计算很耗时。
+
+Octave代码实现：
+
+```matlab
+pinv(X'*X)*X'*y
+```
+其中pinv为伪拟，inv为求拟，在X可逆时两者结果相同，X不可逆时inv无解，pinv仍可以求得结果
+
 
 #### 计算中矩阵不可逆的原因
 
