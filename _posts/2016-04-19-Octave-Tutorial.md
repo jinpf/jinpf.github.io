@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Octave简要语法记录"
-date:   2016-04-18 10:10:10
+date:   2016-04-19 10:10:10
 categories: Machine-Learning
 excerpt: 数学计算工具Octave软件简要语法记录
 ---
